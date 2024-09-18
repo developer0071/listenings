@@ -75,3 +75,17 @@ button:active{
     cursor: pointer;
     transition: all .9s;
 }
+.navbar:hover{
+    box-shadow: 
+    0 0 10px white,
+    inset -20px -20px 10px white,
+    0 0 15px white;    
+    transform: scale(1.1);
+}
+.navbar:active{
+    box-shadow: 
+    0 0 10px white,
+    inset -20px -20px 10px white,
+    0 0 15px white;    
+    transform: scale(1.3);
+}
