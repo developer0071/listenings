@@ -75,3 +75,17 @@ button:active{
     transition: all .9s;
     text-decoration: none;
 }
+.navbar:hover{
+    box-shadow: 
+    0 0 10px rgb(61, 61, 61),
+    inset -20px -20px 10px rgb(61, 61, 61),
+    0 0 15px rgb(61, 61, 61);    
+    transform: scale(1.1);
+}
+.navbar:active{
+    box-shadow: 
+    0 0 10px rgb(61, 61, 61),
+    inset -20px -20px 10px rgb(61, 61, 61),
+    0 0 15px rgb(61, 61, 61);    
+    transform: scale(1.3);
+}
