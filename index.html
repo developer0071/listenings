@@ -1,11 +1,56 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Welcome</title>
         <link rel="stylesheet" href="menu listening words.css">
         <link rel="icon" href="icons8-pc-96.png">
+        <style>
+            .counter-container {
+                text-align: center;
+                background: transparent;
+                position: absolute;
+            }
+            .counter {
+                top: 2%;
+                left: 2%;
+            color: azure;
+            position: absolute;
+            font-size: 48px;
+            margin: 20px 0;
+            transition: color 0.2s, transform 0.2s, opacity 0.5s;
+            opacity: 1;
+        }
+            .button-container {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                display: none;
+            }
+        .bounce {
+            animation: bounce 0.5s ease forwards;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+        </style>
     </head>
     <body>
+            <div class="counter" id="counter">0</div>
+            <div class="button-container">
+                <button class="counter-button" id="addButton">Add +1</button>
+                <button class="counter-button" id="decreaseButton">Decrease -1</button>
+            </div>
         <div class="top">
             <a href="https://developer0071.github.io/16.30/" class="navbar">🏡</a>
         </div>
@@ -31,5 +76,39 @@
         <button class="unit" onclick="location.href='life.html'">Life of trees</button>
         <button class="unit" onclick="location.href='weather.html'">Weather</button>
         <button class="unit" onclick="location.href='philosophy.html'">Philosophy</button>
-    </body>
+<script>
+    const counterElement = document.getElementById('counter');
+    const addButton = document.getElementById('addButton');
+    const decreaseButton = document.getElementById('decreaseButton');
+
+    // Load the counter value from local storage
+    let count = localStorage.getItem('counter') ? parseInt(localStorage.getItem('counter')) : 0;
+    counterElement.innerText = count;
+
+    // Function to update the counter display and local storage
+    function updateCounter(value) {
+        count += value;
+        counterElement.innerText = count;
+
+        // Save the updated count to local storage
+        localStorage.setItem('counter', count);
+
+        // Add animation
+        counterElement.style.transform = 'scale(1.2)';
+        setTimeout(() => {
+            counterElement.style.transform = 'scale(1)';
+        }, 200);
+    }
+
+    // Add event listener for the Add button
+    addButton.addEventListener('click', () => {
+        updateCounter(1);
+    });
+
+    // Add event listener for the Decrease button
+    decreaseButton.addEventListener('click', () => {
+        updateCounter(-1);
+    });
+</script>    
+</body>
 </html>
