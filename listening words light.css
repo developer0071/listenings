@@ -20,6 +20,22 @@ button:active{
     0 0 15px white;    
     transform: scale(1.3);
 }
+a:hover{
+    text-decoration: none;
+    box-shadow: 
+    0 0 10px white,
+    inset -20px -20px 10px white,
+    0 0 15px white;    
+    transform: scale(1.1);
+}
+a:active{
+    text-decoration: none;
+    box-shadow: 
+    0 0 10px white,
+    inset -20px -20px 10px white,
+    0 0 15px white;    
+    transform: scale(1.3);
+}
 .top{
     top: 0px;
     position: sticky;
@@ -49,8 +65,10 @@ button:active{
     0 0 15px white;    
     cursor: pointer;
     transition: all .9s;
+    text-decoration: none;
 }
 .navbar1{
+    text-decoration: none;
     justify-content:center;
     align-items: center;
     display: flex;
