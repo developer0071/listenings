@@ -1,44 +1,148 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Welcome</title>
-        <link rel="stylesheet" href="menu listening words.css">
-        <link rel="icon" href="icons8-pc-96.png">
+<head>
+    <title>Welcome</title>
+    <link rel="stylesheet" href="menu listening words.css">
+    <link rel="icon" href="icons8-pc-96.png">
+    <style>
+        #adminPanel {
+            display:none;
+            position:fixed;
+            top:10%;
+            left:50%;
+            transform:translateX(-50%);
+            background:transparent;
+            backdrop-filter: blur(20px);
+            border:2px solid #5e5e5e;
+            padding:20px;
+            z-index:9999;
+            color:white;
+            border-radius: 10px;
+            box-shadow: 
+            0 0 5px white,
+            inset 0 0 10px white,
+            0 0 10px white;
+        }
+    </style>
+</head>
+<body>
+    <div class="top">
+        <a href="https://developer0071.github.io/Special.For.IeltsEduDepartment/" class="navbar">🏡</a>
+    </div>
 
-    </head>
-    <body>
-        <div class="top">
-            <a href="https://developer0071.github.io/Special.For.IeltsEduDepartment/" class="navbar">🏡</a>
-        </div>
-        <button class="unit" onclick="location.href='building bridge.html'">Building bridge</button>
-        <button class="unit" onclick="location.href='collecting.html'">Collecting</button>
-        <button class="unit" onclick="location.href='animal conservation.html'">Animal conservation</button>
-        <button class="unit" onclick="location.href='creepy.html'">Creepy crawly</button>
-        <button class="unit" onclick="location.href='ecotourism.html'">Ecotourism</button>
-        <button class="unit" onclick="location.href='asthma.html'">Asthma</button>
-        <button class="unit" onclick="location.href='iguana.html'">Iguana farming</button>
-        <button class="unit" onclick="location.href='archaeology.html'">Archaeology</button>
-        <button class="unit" onclick="location.href='landlocked.html'">Landlocked</button>
-        <button class="unit" onclick="location.href='consumer.html'">Consumer society</button>
-        <button class="unit" onclick="location.href='environmental.html'">Environmental protest groups</button>
-        <button class="unit" onclick="location.href='crazy.html'">Crazy festivals</button>
-        <button class="unit" onclick="location.href='exam.html'">Exam</button> 
-        <button class="unit" onclick="location.href='extra.html'">Extra sensory</button>
-        <button class="unit" onclick="location.href='racial.html'">Racial discrimination</button>
-        <button class="unit" onclick="location.href='great apes.html'">Great apes</button>
-        <button class="unit" onclick="location.href='Charities.html'">Charities </button>
-        <button class="unit" onclick="location.href='illiteracy.html'">Illiteracy</button>
-        <button class="unit" onclick="location.href='indigenous.html'">Indigenous people</button>
-        <button class="unit" onclick="location.href='life.html'">Life of trees</button>
-        <button class="unit" onclick="location.href='weather.html'">Weather</button>
-        <button class="unit" onclick="location.href='philosophy.html'">Philosophy</button>
-        <button class="unit" onclick="location.href='martial.html'">Martial arts</button>
-        <button class="unit" onclick="location.href='airplanes.html'">Airplanes and Global Warming</button>
-        <button class="unit" onclick="location.href='tobacco.html'">Tobacco</button>
-        <div class="halloween-container"></div>
+    <!-- Buttons -->
+    <button class="unit" data-file="building bridge.html">Building bridge</button>
+    <button class="unit" data-file="collecting.html">Collecting</button>
+    <button class="unit" data-file="animal conservation.html">Animal conservation</button>
+    <button class="unit" data-file="creepy.html">Creepy crawly</button>
+    <button class="unit" data-file="ecotourism.html">Ecotourism</button>
+    <button class="unit" data-file="asthma.html">Asthma</button>
+    <button class="unit" data-file="iguana.html">Iguana farming</button>
+    <button class="unit" data-file="archaeology.html">Archaeology</button>
+    <button class="unit" data-file="landlocked.html">Landlocked</button>
+    <button class="unit" data-file="consumer.html">Consumer society</button>
+    <button class="unit" data-file="environmental.html">Environmental protest groups</button>
+    <button class="unit" data-file="crazy.html">Crazy festivals</button>
+    <button class="unit" data-file="exam.html">Exam</button>
+    <button class="unit" data-file="extra.html">Extra sensory</button>
+    <button class="unit" data-file="racial.html">Racial discrimination</button>
+    <button class="unit" data-file="great apes.html">Great apes</button>
+    <button class="unit" data-file="Charities.html">Charities</button>
+    <button class="unit" data-file="illiteracy.html">Illiteracy</button>
+    <button class="unit" data-file="indigenous.html">Indigenous people</button>
+    <button class="unit" data-file="life.html">Life of trees</button>
+    <button class="unit" data-file="weather.html">Weather</button>
+    <button class="unit" data-file="philosophy.html">Philosophy</button>
+    <button class="unit" data-file="martial.html">Martial arts</button>
+    <button class="unit" data-file="airplanes.html">Airplanes and Global Warming</button>
+    <button class="unit" data-file="tobacco.html">Tobacco</button>
+
+    <!-- Hidden admin panel -->
+    <div id="adminPanel">
+        <h3>Admin Panel</h3>
+        <label>Choose button:</label>
+        <select id="buttonSelect"></select><br><br>
+
+        <label>Password validity (minutes):</label>
+        <input type="number" id="validityTime" value="5"><br><br>
+
+        <button style="border-radius : 20px; width: 400px;height: 100px;" id="generateBtn">Generate Password</button><br><br>
+        <div id="generatedPassword"></div>
+        <button style="border-radius : 20px; width: 400px;height: 100px;" onclick="closeAdmin()">Close</button>
+    </div>
+
+    <script>
+        const buttons = document.querySelectorAll('.unit');
+        const adminPanel = document.getElementById('adminPanel');
+
+        // Load passwords and unlocked buttons from localStorage
+        let activePasswords = JSON.parse(localStorage.getItem('activePasswords') || '{}');
+        let unlockedButtons = JSON.parse(localStorage.getItem('unlockedButtons') || '{}');
+
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const file = btn.dataset.file;
+                const now = Date.now();
+
+                // Check if this student already unlocked the button
+                if(unlockedButtons[file]){
+                    window.location.href = file;
+                    return;
+                }
+
+                // Otherwise, check if a password exists and is valid
+                const stored = activePasswords[file];
+                if(stored && stored.expires > now){
+                    const entered = prompt(`Enter password for "${btn.textContent}"`);
+                    if(!entered) return;
+
+                    if(entered === stored.password){
+                        // Mark as unlocked for this student
+                        unlockedButtons[file] = true;
+                        localStorage.setItem('unlockedButtons', JSON.stringify(unlockedButtons));
+                        window.location.href = file;
+                    } else {
+                        alert("Incorrect password!");
+                    }
+                } else {
+                    alert("Password expired or not generated yet. Contact admin.");
+                }
+            });
+        });
+
+        // Admin panel toggle
+        document.addEventListener('keydown', e => {
+            if(e.ctrlKey && e.key.toLowerCase() === 'i'){
+                adminPanel.style.display = 'block';
+                populateButtons();
+            }
+        });
+
+        function closeAdmin(){ adminPanel.style.display = 'none'; }
+
+        function populateButtons(){
+            const select = document.getElementById('buttonSelect');
+            select.innerHTML = '';
+            buttons.forEach(btn=>{
+                const option = document.createElement('option');
+                option.value = btn.dataset.file;
+                option.textContent = btn.textContent;
+                select.appendChild(option);
+            });
+        }
+
+        // Generate password
+        document.getElementById('generateBtn').addEventListener('click', ()=>{
+            const file = document.getElementById('buttonSelect').value;
+            const minutes = parseInt(document.getElementById('validityTime').value);
+            const password = Math.random().toString(36).substring(2,8);
+            const expires = Date.now() + minutes*60*1000;
+
+            activePasswords[file] = { password, expires };
+            localStorage.setItem('activePasswords', JSON.stringify(activePasswords));
+            document.getElementById('generatedPassword').textContent = `Password: ${password} (valid for ${minutes} min)`;
+            alert(`Password for "${file}" is now active for ${minutes} minutes`);
+        });
+    </script>
 </body>
 </html>
-
-</body>
-</html>
-
