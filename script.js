@@ -1,1 +1,71 @@
-function _0x2fe3(){const _0x288ee2=['99112733','forEach','Enter\x20password\x20for\x20this\x20section:','stringify','99117788','3640150ilalug','99900011','8QvTlmy','DOMContentLoaded','88993344','54062jqLluu','50505050','addEventListener','41196DjsJFX','Incorrect\x20password\x20❌','parse','00080578','55442011','4734144ehgSNH','12125544','data-page','click','getItem','33334444','1165283tBEmUW','44661290','unlockedPages','hasOwnProperty','55006677','23510GQXaQE','14437753eGYbgc','21235544','setItem','32005411','11997755','.unit[data-page]','88PCBWga','564OrDMnd','66664444','93284755','This\x20section\x20is\x20not\x20available.','18Wesfow','77770000','15253545'];_0x2fe3=function(){return _0x288ee2;};return _0x2fe3();}function _0x46ef(_0x6de75,_0x44fbcb){const _0x2fe3cc=_0x2fe3();return _0x46ef=function(_0x46effe,_0x4978bc){_0x46effe=_0x46effe-0x117;let _0x2a0d08=_0x2fe3cc[_0x46effe];return _0x2a0d08;},_0x46ef(_0x6de75,_0x44fbcb);}(function(_0x217279,_0x17e925){const _0x12e06c=_0x46ef,_0xc0987=_0x217279();while(!![]){try{const _0x53edf0=-parseInt(_0x12e06c(0x142))/0x1*(-parseInt(_0x12e06c(0x123))/0x2)+-parseInt(_0x12e06c(0x126))/0x3*(parseInt(_0x12e06c(0x13d))/0x4)+parseInt(_0x12e06c(0x136))/0x5*(-parseInt(_0x12e06c(0x13e))/0x6)+-parseInt(_0x12e06c(0x131))/0x7*(-parseInt(_0x12e06c(0x120))/0x8)+-parseInt(_0x12e06c(0x12b))/0x9+-parseInt(_0x12e06c(0x11e))/0xa+parseInt(_0x12e06c(0x137))/0xb;if(_0x53edf0===_0x17e925)break;else _0xc0987['push'](_0xc0987['shift']());}catch(_0x4dc81b){_0xc0987['push'](_0xc0987['shift']());}}}(_0x2fe3,0x50ea3),(function(){const _0x4a7038=_0x46ef,_0x529b0b={'building\x20bridge.html':_0x4a7038(0x129),'collecting.html':_0x4a7038(0x118),'animal\x20conservation.html':_0x4a7038(0x140),'creepy.html':'65920148','ecotourism.html':_0x4a7038(0x119),'asthma.html':_0x4a7038(0x12a),'iguana.html':_0x4a7038(0x122),'archaeology.html':_0x4a7038(0x132),'landlocked.html':_0x4a7038(0x11d),'consumer.html':_0x4a7038(0x138),'environmental.html':_0x4a7038(0x12c),'crazy.html':'90987654','exam.html':_0x4a7038(0x117),'extra.html':'88889999','racial.html':_0x4a7038(0x124),'great\x20apes.html':_0x4a7038(0x130),'Charities.html':'22221111','illiteracy.html':_0x4a7038(0x13b),'indigenous.html':'11002233','life.html':'44778899','weather.html':_0x4a7038(0x13a),'philosophy.html':_0x4a7038(0x135),'martial.html':'77553322','airplanes.html':_0x4a7038(0x11f),'tobacco.html':_0x4a7038(0x13f)},_0x31367d=_0x4a7038(0x133);let _0x33b7bb={};try{_0x33b7bb=JSON[_0x4a7038(0x128)](localStorage[_0x4a7038(0x12f)](_0x31367d))||{};}catch(_0x170737){_0x33b7bb={};}function _0x182884(_0x1ba3de){const _0x5f28b2=_0x4a7038;if(!_0x529b0b[_0x5f28b2(0x134)](_0x1ba3de)){alert(_0x5f28b2(0x141));return;}if(_0x33b7bb[_0x1ba3de]){location['href']=_0x1ba3de;return;}const _0x209e23=prompt(_0x5f28b2(0x11b));if(_0x209e23===null)return;_0x209e23===_0x529b0b[_0x1ba3de]?(_0x33b7bb[_0x1ba3de]=!![],localStorage[_0x5f28b2(0x139)](_0x31367d,JSON[_0x5f28b2(0x11c)](_0x33b7bb)),location['href']=_0x1ba3de):alert(_0x5f28b2(0x127));}document[_0x4a7038(0x125)](_0x4a7038(0x121),function(){const _0x41bd0a=_0x4a7038,_0x54237d=document['querySelectorAll'](_0x41bd0a(0x13c));_0x54237d[_0x41bd0a(0x11a)](function(_0x8e2e9d){const _0x1a28e3=_0x41bd0a;_0x8e2e9d[_0x1a28e3(0x125)](_0x1a28e3(0x12e),function(){const _0x3e57a8=_0x1a28e3,_0x450c85=_0x8e2e9d['getAttribute'](_0x3e57a8(0x12d));_0x182884(_0x450c85);});});});}()));
+(function () {
+    const PASSWORDS = {
+        "building bridge.html": "00080578",
+        "collecting.html": "15253545",
+        "animal conservation.html": "93284755",
+        "creepy.html": "65920148",
+        "ecotourism.html": "99112733",
+        "asthma.html": "55442011",
+        "iguana.html": "88993344",
+        "archaeology.html": "44661290",
+        "landlocked.html": "99117788",
+        "consumer.html": "21235544",
+        "environmental.html": "12125544",
+        "crazy.html": "90987654",
+        "exam.html": "77770000",
+        "extra.html": "88889999",
+        "racial.html": "50505050",
+        "great apes.html": "33334444",
+        "Charities.html": "22221111",
+        "illiteracy.html": "11997755",
+        "indigenous.html": "11002233",
+        "life.html": "44778899",
+        "weather.html": "32005411",
+        "philosophy.html": "55006677",
+        "martial.html": "77553322",
+        "airplanes.html": "99900011",
+        "tobacco.html": "66664444"
+    };
+
+    const STORAGE_KEY = "unlockedPages";
+
+    let unlocked = {};
+    try {
+        unlocked = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+    } catch (e) {
+        unlocked = {};
+    }
+
+    function checkAndGo(page) {
+        if (!PASSWORDS.hasOwnProperty(page)) {
+            alert("This section is not available.");
+            return;
+        }
+
+        if (unlocked[page]) {
+            location.href = page;
+            return;
+        }
+
+        const entered = prompt("Enter password for this section:");
+        if (entered === null) return;
+
+        if (entered === PASSWORDS[page]) {
+            unlocked[page] = true;
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(unlocked));
+            location.href = page;
+        } else {
+            alert("Incorrect password ❌");
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const buttons = document.querySelectorAll(".unit[data-page]");
+        buttons.forEach(function (btn) {
+            btn.addEventListener("click", function () {
+                const page = btn.getAttribute("data-page");
+                checkAndGo(page);
+            });
+        });
+    });
+})();
