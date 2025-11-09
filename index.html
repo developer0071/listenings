@@ -1,85 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
     <title>Welcome</title>
     <link rel="stylesheet" href="menu listening words.css">
     <link rel="icon" href="icons8-pc-96.png">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
-            text-align: center;
-            padding: 20px;
-        }
-        .top {
-            margin-bottom: 20px;
-        }
-        .navbar {
-            font-size: 24px;
-            text-decoration: none;
-        }
-        .unit {
-            display: block;
-            width: 250px;
-            margin: 10px auto;
-            padding: 10px;
-            border: none;
-            background: #0078d4;
-            color: white;
-            font-size: 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .unit:hover {
-            background: #005fa3;
-        }
-    </style>
 </head>
 <body>
     <div class="top">
         <a href="https://developer0071.github.io/Special.For.IeltsEduDepartment/" class="navbar">🏡</a>
     </div>
 
-    <button class="unit" onclick="checkPassword('building bridge.html', '00080578')">Building bridge</button>
-    <button class="unit" onclick="checkPassword('collecting.html', '15253545')">Collecting</button>
-    <button class="unit" onclick="checkPassword('animal conservation.html', '93284755')">Animal conservation</button>
-    <button class="unit" onclick="checkPassword('creepy.html', '65920148')">Creepy crawly</button>
-    <button class="unit" onclick="checkPassword('ecotourism.html', '99112733')">Ecotourism</button>
-    <button class="unit" onclick="checkPassword('asthma.html', '55442011')">Asthma</button>
-    <button class="unit" onclick="checkPassword('iguana.html', '88993344')">Iguana farming</button>
-    <button class="unit" onclick="checkPassword('archaeology.html', '44661290')">Archaeology</button>
-    <button class="unit" onclick="checkPassword('landlocked.html', '99117788')">Landlocked</button>
-    <button class="unit" onclick="checkPassword('consumer.html', '21235544')">Consumer society</button>
-    <button class="unit" onclick="checkPassword('environmental.html', '12125544')">Environmental protest groups</button>
-    <button class="unit" onclick="checkPassword('crazy.html', '90987654')">Crazy festivals</button>
-    <button class="unit" onclick="checkPassword('exam.html', '77770000')">Exam</button>
-    <button class="unit" onclick="checkPassword('extra.html', '88889999')">Extra sensory</button>
-    <button class="unit" onclick="checkPassword('racial.html', '50505050')">Racial discrimination</button>
-    <button class="unit" onclick="checkPassword('great apes.html', '33334444')">Great apes</button>
-    <button class="unit" onclick="checkPassword('Charities.html', '22221111')">Charities</button>
-    <button class="unit" onclick="checkPassword('illiteracy.html', '11997755')">Illiteracy</button>
-    <button class="unit" onclick="checkPassword('indigenous.html', '11002233')">Indigenous people</button>
-    <button class="unit" onclick="checkPassword('life.html', '44778899')">Life of trees</button>
-    <button class="unit" onclick="checkPassword('weather.html', '32005411')">Weather</button>
-    <button class="unit" onclick="checkPassword('philosophy.html', '55006677')">Philosophy</button>
-    <button class="unit" onclick="checkPassword('martial.html', '77553322')">Martial arts</button>
-    <button class="unit" onclick="checkPassword('airplanes.html', '99900011')">Airplanes and Global Warming</button>
-    <button class="unit" onclick="checkPassword('tobacco.html', '66664444')">Tobacco</button>
+    <button class="unit" data-page="building bridge.html">Building bridge</button>
+    <button class="unit" data-page="collecting.html">Collecting</button>
+    <button class="unit" data-page="animal conservation.html">Animal conservation</button>
+    <button class="unit" data-page="creepy.html">Creepy crawly</button>
+    <button class="unit" data-page="ecotourism.html">Ecotourism</button>
+    <button class="unit" data-page="asthma.html">Asthma</button>
+    <button class="unit" data-page="iguana.html">Iguana farming</button>
+    <button class="unit" data-page="archaeology.html">Archaeology</button>
+    <button class="unit" data-page="landlocked.html">Landlocked</button>
+    <button class="unit" data-page="consumer.html">Consumer society</button>
+    <button class="unit" data-page="environmental.html">Environmental protest groups</button>
+    <button class="unit" data-page="crazy.html">Crazy festivals</button>
+    <button class="unit" data-page="exam.html">Exam</button>
+    <button class="unit" data-page="extra.html">Extra sensory</button>
+    <button class="unit" data-page="racial.html">Racial discrimination</button>
+    <button class="unit" data-page="great apes.html">Great apes</button>
+    <button class="unit" data-page="Charities.html">Charities</button>
+    <button class="unit" data-page="illiteracy.html">Illiteracy</button>
+    <button class="unit" data-page="indigenous.html">Indigenous people</button>
+    <button class="unit" data-page="life.html">Life of trees</button>
+    <button class="unit" data-page="weather.html">Weather</button>
+    <button class="unit" data-page="philosophy.html">Philosophy</button>
+    <button class="unit" data-page="martial.html">Martial arts</button>
+    <button class="unit" data-page="airplanes.html">Airplanes and Global Warming</button>
+    <button class="unit" data-page="tobacco.html">Tobacco</button>
 
-    <div class="halloween-container"></div>
+    <!-- <div class="halloween-container"></div> -->
 
-    <script>
-        function checkPassword(page, correctPassword) {
-            const entered = prompt("Enter password for this section:");
-            if (entered === correctPassword) {
-                location.href = page;
-            } else if (entered === null) {
-                // user canceled
-            } else {
-                alert("Incorrect password ❌");
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
